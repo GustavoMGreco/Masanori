@@ -1,0 +1,126 @@
+INSERÇÃO:
+1 0 2 6 3 4 7 5
+
+1			        1 fica
+0 1			        0 empurra 1
+0 1 2			    2 fica
+0 1 2 6			    6 fica
+0 1 2 3 6 		    3 empurra 6
+0 1 2 3 4 6		    4 empurra 6
+0 1 2 3 4 6 7		7 fica
+0 1 2 3 4 5 6 7 	5 empurra 67
+
+
+2 0 5 7 3 1 6 4
+
+2			        2 fica
+0 2			        0 empurra 2
+0 2 5			    5 fica
+0 2 5 7			    7 fica
+0 2 3 5 7		    3 emp 57
+0 1 2 3 5 7		    1 emp 2357
+0 1 2 3 5 6 7		6 emp 7
+0 1 2 3 4 5 6 7 	4 emp 567
+
+
+7 5 0 1 2 3 6 4
+
+7			        7 fica
+5 7 			    5 emp 7
+0 5 7			    0 emp 57
+0 1 5 7			    1 emp 57
+0 1 2 5 7		    2 emp 57
+0 1 2 3 5 7		    3 emp 57
+0 1 2 3 5 6 7		6 emp 7
+0 1 2 3 4 5 6 7		4 emp 567
+
+
+6 3 2 5 4 7 1 0
+
+6			        6 fica
+3 6 			    3 emp 6
+2 3 6			    2 emp 36
+2 3 5 6			    5 emp 6
+2 3 4 5 6		    4 emp 56
+2 3 4 5 6 7 		7 fica
+1 2 3 4 5 6 7		1 emp 234567
+0 1 2 3 4 5 6 7 	0 emp 1234567
+
+
+
+SELEÇÃO:
+2 0 5 7 3 1 6 4
+
+0 2 5 7 3 1 6 4 	troca 0 com 2
+0 1 5 7 3 2 6 4 	troca 1 com 2
+0 1 2 7 3 5 6 4 	troca 2 com 5
+0 1 2 3 7 5 6 4 	troca 3 com 7
+0 1 2 3 4 5 6 7 	troca 4 com 7
+0 1 2 3 4 5 6 7 	troca 5 com 5
+0 1 2 3 4 5 6 7 	troca 6 com 6
+0 1 2 3 4 5 6 7 	(não verifica o último)
+
+
+7 5 0 1 2 3 6 4
+
+0 5 7 1 2 3 6 4		troca 0 com 7
+0 1 7 5 2 3 6 4		troca 1 com 5
+0 1 2 5 7 3 6 4		troca 2 com 7
+0 1 2 3 7 5 6 4		troca 3 com 5
+0 1 2 3 4 5 6 7		troca 4 com 7
+0 1 2 3 4 5 6 7		troca 5 com 5
+0 1 2 3 4 5 6 7		troca 6 com 6
+0 1 2 3 4 5 6 7		(não verifica o último)
+
+
+5 3 0 1 2 4 6 7
+
+0 3 5 1 2 4 6 7		troca 0 com 5
+0 1 5 3 2 4 6 7		troca 1 com 3
+0 1 2 3 5 4 6 7		troca 2 com 5
+0 1 2 3 5 4 6 7		troca 3 com 3
+0 1 2 3 4 5 6 7		troca 4 com 5
+0 1 2 3 4 5 6 7		troca 5 com 5
+0 1 2 3 4 5 6 7		troca 6 com 6
+0 1 2 3 4 5 6 7		(não verifica o último)
+
+
+
+MERGESORT:
+20573164
+
+2057 3164		    divido em 2 vetores de 4 elementos
+20 57 31 64		    divido em 4 vetores de 2 elementos
+2 0 5 7 3 1 6 4		divido em 8 vetores de 1 elemento (ordenados)
+02 57 13 46		    comparo os vetores para formar duplas ordenadas (2 com 0, 5 com 7, 3 com 1...)
+0257 1346		    comparo o menor do primeiro vetor com o menor do segundo, depois o maior do primeiro com o menor do segundo (depois é só adicionar o segundo vetor, pois já está ordenado) para formar um quarteto ordenado
+01234567		    comparo o primeiro vetor com o segundo como se fosse chuveirinho (0 é menor que 1? entra 0; 2 é menor que 1? entra 1; 2 é menor que 3? entra 2...) para formar o vetor final ordenado
+
+
+75012364
+
+7501 2364		    divido em 2 vetores de 4
+75 01 23 64		    divido em 4 vetores de 2
+7 5 0 1 2 3 6 4		divido em 8 vetores de 1 (ordenados)
+57 01 23 46		    junto em 4 vetores de 2 ordenados
+0157 2346		    junto em 2 vetores de 4 ordenados
+01234567		    vetor final ordenado
+
+
+
+QUICKSORT:
+20573164
+
+01 2 57364		    2 é pivô, divide entre 01 e 57364
+0 1 2 34 5 76		0 é pivô, divide entre vazio e 1; 5 é pivô, divide entre 34 e 76
+0 1 2 3 4 5 6 7		3 é pivô, divide entre vazio e 4; 7 é pivô, divide ente 6 e vazio
+
+
+75012364
+
+5012364 7 		    7 é pivô, divide entre 5012364 e vazio
+01234 5 6 7		    5 é pivô, divide entre 01234 e 6
+0 1234 5 6 7		0 é pivô, divide entre vazio e 1234
+0 1 234 5 6 7 		1 é pivô, divide entre vazio e 234
+0 1 2 34 5 6 7		2 é pivô, divide entre vazio e 34
+0 1 2 3 4 5 6 7 	3 é pivô, divide entre vazio e 4

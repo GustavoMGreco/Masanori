@@ -20,8 +20,8 @@ consigo mover para uma nova fileira a menor, repetindo o processo até acabarem 
 
 log(n, 2) * n passos
 
-cuidado para juntar gasto mais espaço
-Como as duas metades são independentes posso fazer em paralelo
+cuidado: para juntar gasto mais espaço
+Como as duas metades são independentes, posso fazer em paralelo
 
 
 Se eu tiver duas fileiras de crianças, em ordem de tamanho, consigo montar uma fileira única da seguinte forma: 
@@ -49,3 +49,5 @@ Total: n * log(n, 2) <<<<<<<<<<<  n * n
 CRÍTICA: Preciso de um espaço igual ao vetor original para o vetor resultante do merge. 
 Isto é, vou gastar o dobro de memória. Isto não é bom. Lição importante, não basta ter poucos passos, 
 é necessário também gastar pouca memória, para ser considerado eficiente
+
+*SOLUÇÃO: podemos executar cada metade em paralelo, já que são independentes.

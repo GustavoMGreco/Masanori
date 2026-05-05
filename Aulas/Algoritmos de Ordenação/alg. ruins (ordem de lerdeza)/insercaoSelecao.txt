@@ -28,7 +28,7 @@ INSERÇÃO:
 -total: n*n passos (n**2), isso é muito ruim
 
 
-*pior caso
+*pior algoritmo
 SELEÇÃO:
 -percorro todos da esq para a dir
 -a cada um, vejo o menor do lado direito
@@ -73,10 +73,10 @@ SELEÇÃO:
 -a cada um, preciso ver todos da direita (n passos)
 -total: n*n (n**2) passos
 
-seleção sempre é ruim, não tem caso bom, assim como inserção
+seleção sempre é ruim, não tem caso bom, diferente de inserção.
 *SOLUÇÃO: usando a função pronta min(), que é otimizada para ver os menores, sem percorrer todos os elementos
 
-forma muito melhor (não lembro o nome):
+forma muito melhor (mergesort):
 20573164            1 vetor de 8
 ---------------
 2057 3164           2 vetores de 4
@@ -95,3 +95,5 @@ forma muito melhor (não lembro o nome):
 35 01 24 67         4 vetores de 2
 0135 2467           2 vetores de 4
 01234567            vetor final ordenado
+
+-log(n, 2) * n passos
